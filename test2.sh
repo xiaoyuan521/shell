@@ -55,37 +55,36 @@
 # echo ${arr[0]} # 单个显示
 
 ## 数组综合
-compareArr=("20160426" "20160428")
-ndaysArr=()
-function getNDaysArr(){
-	local i=0
-	while [ $i -lt $1 ]; do
-		local d=`date "+%Y%m%d" --date="+${i} day"`
-		ndaysArr[$i]=$d
-		# echo "bbbbb" ${ndaysArr[@]}
-		i=`expr $i + 1`
-	done
-}
+# compareArr=("20160426" "20160428")
+# ndaysArr=()
+# function getNDaysArr(){
+# 	local i=0
+# 	while [ $i -lt $1 ]; do
+# 		local d=`date "+%Y%m%d" --date="+${i} day"`
+# 		ndaysArr[$i]=$d
+# 		i=`expr $i + 1`
+# 	done
+# }
 
-dayCount=6
-getNDaysArr $dayCount
-for day in ${ndaysArr[@]}; do
-	echo ${day}
-done
+# dayCount=6
+# getNDaysArr $dayCount
+# for day in ${ndaysArr[@]}; do
+# 	echo ${day}
+# done
 
-echo "----------"
+# echo "----------"
 
-compareArrLen=${#compareArr[@]}
-for ((i=0;i<$dayCount;i++));do
-	source=${ndaysArr[$i]}
+# compareArrLen=${#compareArr[@]}
+# for ((i=0;i<$dayCount;i++));do
+# 	source=${ndaysArr[$i]}
 
-	for((j=0;j<$compareArrLen;j++)){
-		compareItem=${compareArr[$j]}
-		if [ $compareItem = $source ]; then
-			echo $source
-		fi
-	}
-done
+# 	for((j=0;j<$compareArrLen;j++)){
+# 		compareItem=${compareArr[$j]}
+# 		if [ $compareItem = $source ]; then
+# 			echo $source
+# 		fi
+# 	}
+# done
 
 #### 变量 ####
 # -- 变量 --
@@ -101,4 +100,14 @@ done
 # 	result=`expr $1 + $2`
 # }
 # add 1 2
+# echo $result
+
+
+### module import
+## usage
+##. ./common.sh 或者 source ./common.sh
+# source ./common.sh
+# echo $variable_from_common
+# common_add 1 8
+# result=$?
 # echo $result
