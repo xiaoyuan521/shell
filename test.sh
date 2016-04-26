@@ -46,6 +46,17 @@
 # echo "world ~"
 # EOF
 
-a=1
-b=`expr $a + 1`
-echo $b;
+# a=1
+# b=`expr $a + 1`
+# echo $b;
+
+_get(){
+	ls
+	if [ $? -ne 0 ]; then
+		echo "error"
+	fi
+}
+
+_get > a.txt
+echo $?
+
