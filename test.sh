@@ -50,20 +50,3 @@
 # b=`expr $a + 1`
 # echo $b;
 
-############ 正则表达式 #########
-## 替换
-# str="apple orange apple"
-# result=`echo "$str" | sed "s/\\sa/ A/g"`
-# echo $result
-
-## 匹配
-# 使用 =~ 匹配的情况下，必须前后2个都是变量。。。
-# 这段儿代码再window的git bash下无法执行。。。
-# str="  apple orange apple"
-# reg='\s{2}a'
-# if [[ "$str" =~ $reg ]]; then
-#     echo "ok"
-# else
-#     echo "ng"
-# fi
-
