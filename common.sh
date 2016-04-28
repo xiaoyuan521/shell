@@ -1,6 +1,9 @@
 #!/bin/bash
 
-echo "in common ~"
+# 実行ディレクトリ検索
+THIS="$0"
+BINDIR=`dirname "$THIS"`
+BINDIR=`cd "$BINDIR"; pwd`
 
 variable_from_common="hello common variable"
 
@@ -34,3 +37,23 @@ readonly DB_P="password"
 #   	return ${results[@]}
 #   # fi
 # }
+
+_is_lock() {
+    local lock_file_name=$BINDIR/$1.lock
+    if [ -f "$lock_file_name" ]; then
+        echo 1
+        return 0
+    else
+        echo 0
+        return 0
+    fi
+}
+_lock() {
+    local lock_file_name=$BINDIR/$1.lock
+    echo $lock_file_name
+    touch $lock_file_name
+}
+_unlock() {
+    local lock_file_name=$BINDIR/$1.lock
+    rm -f $lock_file_name
+}
