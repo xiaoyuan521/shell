@@ -41,6 +41,18 @@
 #       # match found
 # fi
 
+## 匹配，使用grep, 可以再windows的git bash中执行
+## 注意 \d 不能使用，需要使用 [0-9], 原因未知。。。
+## echo "$str" grep -q -R "$reg"
+# tb="bl_ad_conv_log_20150901"
+# reg='bl_ad_conv_log_[0-9]{8}$'
+# echo "$tb" | grep -q -E "$reg"
+# if [ $? -eq 0 ]; then
+#     echo "match"
+# else
+#     echo "not match"
+# fi
+
 ### 部分匹配
 str="apple orange"
 reg='(\w+)\s(\w+)'
