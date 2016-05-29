@@ -27,5 +27,20 @@
 # my $str = qq(hello, wor"ld from $name);
 # print ($str);
 
-my $name2 = qq{nihao};
-print ($name2);
+# my $name2 = qq{nihao};
+# print ($name2);
+
+
+##  tr为 transform， 位置对应替换
+print "---\n";
+$abc="zhaohs";
+$abc=~tr/a-z/A-Z/;
+print $abc;
+print "\n";
+
+## s 为替换，与replace类似
+print "---\n";
+$aaa="zhaohs";
+$aaa=~s/z/chen/;
+print $aaa;
+print "\n";
