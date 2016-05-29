@@ -111,3 +111,29 @@
 # common_add 1 8
 # result=$?
 # echo $result
+
+## 循环控制 continue & break
+# while :
+# do
+#   read aNum
+#   if [  $aNum -lt 5 ]; then
+#     echo "good for you , it's [$aNum]"
+#   else
+#     continue
+#     # break
+#     echo "wrong number, less then 5!"
+#   fi
+# done
+
+## case
+while :; do
+  read input
+  case "$input" in
+    [a-z]|[A-Z] )
+      echo "input is alph";;
+    [0-9] )
+      echo "input is number";;
+    * )
+      echo "input something else ...";;
+  esac
+done
