@@ -31,7 +31,7 @@
 # 	echo $name
 # done
 
-## -- 普通数组 -- 
+## -- 普通数组 --
 # arr=(1 2 3)
 # for item in ${arr[@]}; do
 # 	echo $item
@@ -65,6 +65,18 @@
 # 		i=`expr $i + 1`
 # 	done
 # }
+
+## 二维数组遍历
+# arr_num=(1 2 3)
+# arr_str=("a" "b" "c")
+# arr=()
+# arr[0]=${arr_num[@]}
+# arr[1]=${arr_str[@]}
+# for arr_item in ${arr[@]}; do
+#   for item in ${arr_item[@]}; do
+#     echo "$item"
+#   done
+# done
 
 # dayCount=6
 # getNDaysArr $dayCount
