@@ -20,8 +20,9 @@
 # #### 数值的运算（整数）(正负均可)####
 # echo "2 + 1" | bc
 
-# #### 数值的运算（浮点数）（正负均可） ####
+# #### 数值的运算(整数)（浮点数）（正负均可） ####
 # echo "0.1 - 0.3" | bc | sed -r 's/^(-?)\./\10./'
+# echo "0.1 - 0.3" | bc | xargs printf "%g"
 
 # #### 数值的比较 ####
 # # 非浮点数的比较方法
@@ -47,7 +48,7 @@ OLD_IFS=$IFS
 
 a="1,2,3"
 IFS=',';arr=($a)
-IFS=$OLD_IFS=$IFS
+IFS=$OLD_IFS
 echo ${arr[1]}
 
 while read line
@@ -57,4 +58,5 @@ do
   OLD_IFS=$IFS
   echo ${#line_arr[@]}
 done
+
 
